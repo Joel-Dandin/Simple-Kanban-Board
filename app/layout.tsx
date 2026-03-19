@@ -1,16 +1,7 @@
-import { Geist, Geist_Mono, Noto_Sans } from "next/font/google"
-
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
-import { AppLayout } from "@/components/layout/AppLayout";
-
-const notoSans = Noto_Sans({variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+import { cn } from "@/lib/utils"
+import { AppLayout } from "@/components/layout/AppLayout"
 
 export default function RootLayout({
   children,
@@ -18,11 +9,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable)}
-    >
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider>
           <AppLayout>{children}</AppLayout>
